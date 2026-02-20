@@ -238,38 +238,54 @@ export default function Home() {
                   />
 
                   {/* Date & Seats Row */}
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                    {/* Date Field with Custom Styling */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1.5">
                         Ημερομηνία
                       </label>
-                      <input
-                        type="date"
-                        value={searchData.date}
-                        onChange={(e) => setSearchData({ ...searchData, date: e.target.value })}
-                        min={new Date().toISOString().split('T')[0]}
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
-                        required
-                      />
+                      <div className="relative">
+                        <input
+                          type="date"
+                          value={searchData.date}
+                          onChange={(e) => setSearchData({ ...searchData, date: e.target.value })}
+                          min={new Date().toISOString().split('T')[0]}
+                          className="w-full px-3 sm:px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent appearance-none"
+                          required
+                        />
+                        {/* Custom calendar icon overlay */}
+                        <div className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                          <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
+                        </div>
+                      </div>
                     </div>
                     
-                    <div className="relative">
+                    {/* Passengers with Nice UI */}
+                    <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1.5">
                         Επιβάτες
                       </label>
-                      <select
-                        value={searchData.seats}
-                        onChange={(e) => setSearchData({ ...searchData, seats: parseInt(e.target.value) })}
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent appearance-none pr-10"
-                      >
-                        {[1, 2, 3, 4, 5, 6].map(n => (
-                          <option key={n} value={n}>{n} {n === 1 ? 'επιβάτης' : 'επιβάτες'}</option>
-                        ))}
-                      </select>
-                      <div className="absolute right-3 top-[38px] pointer-events-none">
-                        <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 20 20" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 8l4 4 4-4" />
-                        </svg>
+                      <div className="relative">
+                        <select
+                          value={searchData.seats}
+                          onChange={(e) => setSearchData({ ...searchData, seats: parseInt(e.target.value) })}
+                          className="w-full px-3 sm:px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent appearance-none pr-8 sm:pr-10"
+                        >
+                          {[1, 2, 3, 4, 5, 6].map(n => (
+                            <option key={n} value={n}>{n} {n === 1 ? 'επιβάτης' : 'επιβάτες'}</option>
+                          ))}
+                        </select>
+                        {/* Person icon + dropdown arrow */}
+                        <div className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 pointer-events-none flex items-center gap-1">
+                          <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                          </svg>
+                          <svg className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400" fill="none" viewBox="0 0 20 20" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 8l4 4 4-4" />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </div>
