@@ -7,6 +7,7 @@ import { CookieConsent } from '@/components/CookieConsent';
 import { OfflineIndicator } from '@/components/ui';
 import { ExtensionGuard } from '@/components/ExtensionGuard';
 import { ToastContainer } from '@/components/Toast';
+import { BottomNav } from '@/components/BottomNav';
 
 const inter = Inter({ subsets: ['latin', 'greek'] });
 
@@ -100,6 +101,7 @@ export const viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
+  viewportFit: 'cover',
 };
 
 export default function RootLayout({ children }) {
@@ -160,6 +162,7 @@ export default function RootLayout({ children }) {
           {children}
           <CookieConsent />
           <ToastContainer />
+          <BottomNav />
         </Providers>
       </body>
     </html>
