@@ -17,23 +17,24 @@ export function RotatingText() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % words.length);
-    }, 2500);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <span className="inline-flex items-center h-[1.2em] overflow-hidden align-bottom ml-2">
-      <span
-        className="inline-block gradient-text-blue transition-transform duration-500 ease-in-out"
-        style={{ transform: `translateY(-${currentIndex * 1.2}em)` }}
-      >
-        {words.map((word, index) => (
-          <span key={index} className="block h-[1.2em] leading-[1.2em]">
-            {word}
-          </span>
-        ))}
-      </span>
+    <span className="inline-block overflow-hidden h-[1.1em] align-bottom relative">
+      {words.map((word, index) => (
+        <span
+          key={index}
+          className="block gradient-text-blue transition-all duration-500 ease-in-out"
+          style={{
+            transform: `translateY(-${currentIndex * 100}%)`,
+          }}
+        >
+          {word}
+        </span>
+      ))}
     </span>
   );
 }
@@ -45,23 +46,24 @@ export function RotatingTextSimple() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % words.length);
-    }, 2500);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <span className="inline-flex items-center h-[1.2em] overflow-hidden align-bottom ml-1">
-      <span
-        className="inline-block gradient-text-blue transition-transform duration-500 ease-in-out"
-        style={{ transform: `translateY(-${currentIndex * 1.2}em)` }}
-      >
-        {words.map((word, index) => (
-          <span key={index} className="block h-[1.2em] leading-[1.2em]">
-            {word}
-          </span>
-        ))}
-      </span>
+    <span className="inline-block overflow-hidden h-[1.1em] align-bottom relative">
+      {words.map((word, index) => (
+        <span
+          key={index}
+          className="block gradient-text-blue transition-all duration-500 ease-in-out"
+          style={{
+            transform: `translateY(-${currentIndex * 100}%)`,
+          }}
+        >
+          {word}
+        </span>
+      ))}
     </span>
   );
 }
