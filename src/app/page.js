@@ -250,7 +250,8 @@ export default function Home() {
                           value={searchData.date}
                           onChange={(e) => setSearchData({ ...searchData, date: e.target.value })}
                           min={new Date().toISOString().split('T')[0]}
-                          className="w-full px-3 sm:px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent appearance-none"
+                          placeholder="ηη/μμ/εεεε"
+                          className={`w-full px-3 sm:px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent appearance-none ${!searchData.date ? 'text-gray-400' : 'text-gray-900'}`}
                           required
                         />
                         {/* Custom calendar icon overlay */}
