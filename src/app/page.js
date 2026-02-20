@@ -353,56 +353,56 @@ export default function Home() {
       </section>
 
       {/* Sustainability Section */}
-      <section className="py-24 bg-white relative">
+      <section className="py-12 sm:py-16 lg:py-24 bg-white relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="inline-flex items-center gap-1.5 px-4 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium mb-4">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <span className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1 bg-green-100 text-green-800 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4">
               <LeafIcon /> Βιωσιμότητα
             </span>
-            <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-gray-900">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-gray-900">
               Κάθε διαδρομή μετράει
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-4 sm:px-0">
               Το carpooling μειώνει τις εκπομπές CO₂ και την κυκλοφοριακή συμφόρηση.
               Μαζί κάνουμε τη διαφορά.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="card-lift bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 border border-green-100">
-              <div className="w-14 h-14 bg-green-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-green-200">
-                <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+            <div className="card-lift bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 border border-green-100">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-green-500 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg shadow-green-200">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-2 text-gray-900">-30% CO₂</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2 text-gray-900">-30% CO₂</h3>
+              <p className="text-sm sm:text-base text-gray-600">
                 Κάθε κοινόχρηστη διαδρομή μειώνει τις εκπομπές διοξειδίου του άνθρακα 
                 κατά μέσο όρο 30% ανά επιβάτη.
               </p>
             </div>
 
-            <div className="card-lift bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 border border-blue-100">
-              <div className="w-14 h-14 bg-blue-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-200">
-                <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="card-lift bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 border border-blue-100">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-500 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg shadow-blue-200">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-2 text-gray-900">Λιγότερη κίνηση</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2 text-gray-900">Λιγότερη κίνηση</h3>
+              <p className="text-sm sm:text-base text-gray-600">
                 Λιγότερα αυτοκίνητα στον δρόμο σημαίνει λιγότερη κίνηση 
                 και γρηγορότερες διαδρομές για όλους.
               </p>
             </div>
 
-            <div className="card-lift bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 border border-purple-100">
-              <div className="w-14 h-14 bg-purple-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-200">
-                <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="card-lift bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 border border-purple-100">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-purple-500 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg shadow-purple-200">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-2 text-gray-900">Εξοικονόμηση</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2 text-gray-900">Εξοικονόμηση</h3>
+              <p className="text-sm sm:text-base text-gray-600">
                 Οι οδηγοί εξοικονομούν έως και €200/μήνα σε έξοδα καυσίμων 
                 μοιράζοντας το κόστος.
               </p>
@@ -412,19 +412,19 @@ export default function Home() {
       </section>
 
       {/* Community Section */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-24 relative overflow-hidden">
         <div className="absolute inset-0 dots-pattern opacity-30" />
         
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             <div>
-              <span className="inline-flex items-center gap-1.5 px-4 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-4">
+              <span className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4">
                 <UsersIcon /> Κοινότητα
               </span>
-              <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-gray-900">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-900">
                 Γνωρίστε ανθρώπους στην πορεία
               </h2>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed px-4 sm:px-0">
                 Το carpal.gr δεν είναι απλώς μεταφορά. Είναι ευκαιρία να γνωρίσετε 
                 νέους ανθρώπους, να κάνετε networking και να μετατρέψετε τις καθημερινές 
                 διαδρομές σε ευχάριστες στιγμές.
@@ -526,28 +526,28 @@ export default function Home() {
       </section>
 
       {/* Costs Section */}
-      <section className="py-24 bg-gray-900 text-white relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-24 bg-gray-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 grid-pattern opacity-10" />
         
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-16">
-            <span className="inline-flex items-center gap-1.5 px-4 py-1 bg-white/10 text-white rounded-full text-sm font-medium mb-4">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <span className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1 bg-white/10 text-white rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4">
               <MoneyIcon /> Έξοδα
             </span>
-            <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
               Διαφανής τιμολόγηση
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto px-4 sm:px-0">
               Καμία έκπληξη. Ξέρετε ακριβώς τι πληρώνετε και πού πάνε τα χρήματα.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white/5 backdrop-blur rounded-3xl p-8 border border-white/10">
-              <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-4">
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+            <div className="bg-white/5 backdrop-blur rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 border border-white/10">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/10 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
                 <UserIcon />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Ως Επιβάτης</h3>
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Ως Επιβάτης</h3>
               <div className="space-y-3 text-gray-300">
                 <div className="flex justify-between">
                   <span>Κόστος διαδρομής</span>
@@ -564,16 +564,16 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-3xl p-8 border border-blue-500 relative">
+            <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 border border-blue-500 relative">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-full">
                 ΔΗΜΟΦΙΛΕΣ
               </div>
-              <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-4">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
                 <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4">Ως Οδηγός</h3>
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Ως Οδηγός</h3>
               <div className="space-y-3 text-blue-100">
                 <div className="flex justify-between">
                   <span>Έσοδα από επιβάτες</span>
@@ -590,11 +590,11 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-white/5 backdrop-blur rounded-3xl p-8 border border-white/10">
-              <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-4">
+            <div className="bg-white/5 backdrop-blur rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 border border-white/10">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/10 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
                 <GlobeIcon />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Περιβαλλοντικό Όφελος</h3>
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Περιβαλλοντικό Όφελος</h3>
               <div className="space-y-3 text-gray-300">
                 <div className="flex justify-between">
                   <span>Μείωση CO₂/διαδρομή</span>
@@ -615,70 +615,70 @@ export default function Home() {
           </div>
 
           {/* Trust badges */}
-          <div className="mt-16 flex flex-wrap justify-center gap-8 items-center opacity-60">
+          <div className="mt-8 sm:mt-12 lg:mt-16 flex flex-wrap justify-center gap-4 sm:gap-8 items-center opacity-60">
             <div className="flex items-center gap-2">
-              <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+              <svg className="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
               </svg>
-              <span className="font-semibold">Secure Payments</span>
+              <span className="text-sm sm:text-base font-semibold">Secure Payments</span>
             </div>
             <div className="flex items-center gap-2">
-              <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+              <svg className="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
               </svg>
-              <span className="font-semibold">Verified Users</span>
+              <span className="text-sm sm:text-base font-semibold">Verified Users</span>
             </div>
             <div className="flex items-center gap-2">
-              <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+              <svg className="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/>
               </svg>
-              <span className="font-semibold">Real Profiles</span>
+              <span className="text-sm sm:text-base font-semibold">Real Profiles</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* How It Works */}
-      <section className="py-24 bg-white">
+      <section className="py-12 sm:py-16 lg:py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-gray-900">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-gray-900">
               Πώς λειτουργεί
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 px-4 sm:px-0">
               Τρία απλά βήματα για να ξεκινήσετε
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center">
-              <div className="w-20 h-20 bg-gray-900 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
-                <span className="text-3xl text-white font-bold">1</span>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gray-900 rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-xl">
+                <span className="text-2xl sm:text-3xl text-white font-bold">1</span>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Αναζητήστε</h3>
-              <p className="text-gray-600">
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gray-900">Αναζητήστε</h3>
+              <p className="text-sm sm:text-base text-gray-600 px-4 sm:px-0">
                 Εισάγετε το σημείο αναχώρησης και προορισμό. 
                 Βρείτε διαθέσιμες διαδρομές σε δευτερόλεπτα.
               </p>
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-gray-900 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
-                <span className="text-3xl text-white font-bold">2</span>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gray-900 rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-xl">
+                <span className="text-2xl sm:text-3xl text-white font-bold">2</span>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Κλείστε θέση</h3>
-              <p className="text-gray-600">
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gray-900">Κλείστε θέση</h3>
+              <p className="text-sm sm:text-base text-gray-600 px-4 sm:px-0">
                 Επιλέξτε ημερομηνία και θέσεις. Πληρώστε με ασφάλεια 
                 μέσω Stripe. Λάβετε επιβεβαίωση άμεσα.
               </p>
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-gray-900 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
-                <span className="text-3xl text-white font-bold">3</span>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gray-900 rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-xl">
+                <span className="text-2xl sm:text-3xl text-white font-bold">3</span>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Ταξιδέψτε</h3>
-              <p className="text-gray-600">
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gray-900">Ταξιδέψτε</h3>
+              <p className="text-sm sm:text-base text-gray-600 px-4 sm:px-0">
                 Συναντήστε τον οδηγό στο σημείο συνάντησης. 
                 Απολαύστε το ταξίδι και βαθμολογήστε μετά.
               </p>
@@ -688,33 +688,33 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-72 md:w-96 h-72 md:h-96 bg-blue-500 rounded-full blur-3xl opacity-20" />
           <div className="absolute bottom-0 right-1/4 w-72 md:w-96 h-72 md:h-96 bg-purple-500 rounded-full blur-3xl opacity-20" />
         </div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             Έτοιμοι να ξεκινήσετε;
           </h2>
-          <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-10 max-w-2xl mx-auto px-4 sm:px-0">
             Συνδεθείτε με χιλιάδες οδηγούς και επιβάτες στην Ελλάδα. 
             Εγγραφείτε δωρεάν σήμερα.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/auth/register">
-              <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100 px-10 py-5 text-lg rounded-xl font-semibold">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 px-4 sm:px-0">
+            <Link href="/auth/register" className="w-full sm:w-auto">
+              <Button size="lg" className="w-full sm:w-auto bg-white text-gray-900 hover:bg-gray-100 px-6 sm:px-10 py-4 sm:py-5 text-base sm:text-lg rounded-xl font-semibold">
                 Δωρεάν εγγραφή
               </Button>
             </Link>
-            <Link href="/main/search">
-              <Button variant="outline" size="lg" className="border-2 border-white/30 text-white hover:bg-white/10 px-10 py-5 text-lg rounded-xl">
+            <Link href="/main/search" className="w-full sm:w-auto">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto border-2 border-white/30 text-white hover:bg-white/10 px-6 sm:px-10 py-4 sm:py-5 text-base sm:text-lg rounded-xl">
                 Αναζήτηση διαδρομών
               </Button>
             </Link>
           </div>
-          <p className="text-sm text-gray-400 mt-6 flex items-center justify-center gap-1">
+          <p className="text-xs sm:text-sm text-gray-400 mt-4 sm:mt-6 flex flex-wrap items-center justify-center gap-1 px-4 sm:px-0">
             <CheckIcon /> Δωρεάν εγγραφή <CheckIcon /> Καμία συνδρομή <CheckIcon /> Πληρώνετε μόνο όταν ταξιδεύετε
           </p>
         </div>
