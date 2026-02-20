@@ -7,7 +7,6 @@ const words = [
   'βιώσιμα',
   'οικονομικά',
   'γρήγορα',
-  'ασφαλή',
   'οικολογικά'
 ];
 
@@ -23,18 +22,18 @@ export function RotatingText() {
   }, []);
 
   return (
-    <span className="inline-block overflow-hidden align-middle" style={{ height: '1.4em', lineHeight: '1.4em' }}>
+    <span className="inline-flex items-baseline overflow-hidden" style={{ height: '1.1em' }}>
       <span
-        className="inline-block transition-transform duration-500 ease-in-out"
+        className="flex flex-col transition-transform duration-500 ease-in-out"
         style={{
-          transform: `translateY(-${currentIndex * 1.4}em)`,
+          transform: `translateY(-${currentIndex * 20}%)`,
         }}
       >
         {words.map((word, index) => (
           <span
             key={index}
-            className="block gradient-text-blue"
-            style={{ height: '1.4em', lineHeight: '1.4em' }}
+            className="gradient-text-blue leading-none"
+            style={{ height: '20%' }}
           >
             {word}
           </span>
@@ -44,7 +43,7 @@ export function RotatingText() {
   );
 }
 
-// Mobile version - same inline style
+// Mobile version
 export function RotatingTextSimple() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -57,18 +56,18 @@ export function RotatingTextSimple() {
   }, []);
 
   return (
-    <span className="inline-block overflow-hidden align-middle" style={{ height: '1.4em', lineHeight: '1.4em' }}>
+    <span className="inline-flex items-baseline overflow-hidden" style={{ height: '1.1em' }}>
       <span
-        className="inline-block transition-transform duration-500 ease-in-out"
+        className="flex flex-col transition-transform duration-500 ease-in-out"
         style={{
-          transform: `translateY(-${currentIndex * 1.4}em)`,
+          transform: `translateY(-${currentIndex * 20}%)`,
         }}
       >
         {words.map((word, index) => (
           <span
             key={index}
-            className="block gradient-text-blue"
-            style={{ height: '1.4em', lineHeight: '1.4em' }}
+            className="gradient-text-blue leading-none"
+            style={{ height: '20%' }}
           >
             {word}
           </span>
