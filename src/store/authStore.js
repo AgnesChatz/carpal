@@ -126,9 +126,8 @@ const useAuthStore = create((set, get) => ({
     }
   },
 
-  loginWithGoogle: async () => {
+  loginWithGoogle: () => {
     if (USE_MOCK_DATA) {
-      await mockDelay(800);
       localStorage.setItem('carpal_mock_session', 'true');
       set({
         user: { ...MOCK_USER, name: 'Google User', email: 'user@gmail.com' },
@@ -136,19 +135,19 @@ const useAuthStore = create((set, get) => ({
         userPrivate: MOCK_USER_PRIVATE,
         isAuthenticated: true
       });
-      return { success: true };
+      return;
     }
 
-    // Real Google OAuth via Appwrite
+    // Real Google OAuth via Appwrite - this redirects the browser
+    // Using try-catch to handle any errors
     try {
       account.createOAuth2Session(
         OAuthProvider.Google,
         `${window.location.origin}/main/search`, // Success URL
         `${window.location.origin}/auth/login`,  // Failure URL
       );
-      return { success: true };
     } catch (error) {
-      return { success: false, error: error.message };
+      console.error('Google OAuth error:', error);
     }
   },
 

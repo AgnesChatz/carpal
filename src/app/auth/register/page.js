@@ -73,17 +73,11 @@ export default function RegisterPage() {
     setIsLoading(false);
   };
 
-  const handleGoogleLogin = async () => {
+  const handleGoogleLogin = () => {
     setError('');
-    setIsLoading(true);
-    
-    const result = await loginWithGoogle();
-    
-    if (!result.success) {
-      setError(result.error);
-      setIsLoading(false);
-    }
-    // OAuth redirect happens automatically on success
+    // Don't set loading - the redirect happens immediately
+    loginWithGoogle();
+    // OAuth redirect happens automatically
   };
 
   return (
@@ -183,7 +177,6 @@ export default function RegisterPage() {
                 size="lg"
                 className="w-full flex items-center justify-center gap-3"
                 onClick={handleGoogleLogin}
-                loading={isLoading}
               >
                 <GoogleIcon />
                 Εγγραφή με Google
