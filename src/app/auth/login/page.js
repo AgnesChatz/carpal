@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Button, Input, Card, CardContent } from '@/components/ui';
 import useAuthStore from '@/store/authStore';
+import { toast } from '@/components/Toast';
 
 // Google Icon Component
 const GoogleIcon = () => (
@@ -52,8 +53,10 @@ export default function LoginPage() {
     const result = await login(formData.email, formData.password);
     
     if (result.success) {
+      toast.success('Καλώς ήρθατε!');
       router.push('/main/search');
     } else {
+      toast.error(result.error || 'Σφάλμα σύνδεσης');
       setError(result.error);
     }
     

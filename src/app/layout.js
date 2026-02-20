@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer';
 import { CookieConsent } from '@/components/CookieConsent';
 import { OfflineIndicator } from '@/components/ui';
 import { ExtensionGuard } from '@/components/ExtensionGuard';
+import { ToastContainer } from '@/components/Toast';
 
 const inter = Inter({ subsets: ['latin', 'greek'] });
 
@@ -158,6 +159,7 @@ export default function RootLayout({ children }) {
           <OfflineIndicator />
           {children}
           <CookieConsent />
+          <ToastContainer />
         </Providers>
       </body>
     </html>
