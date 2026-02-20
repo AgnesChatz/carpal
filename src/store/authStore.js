@@ -137,7 +137,8 @@ const useAuthStore = create((set, get) => ({
       });
       // Redirect manually in mock mode
       if (typeof window !== 'undefined') {
-        window.location.href = '/main/search';
+        const baseUrl = process.env.NEXT_PUBLIC_APP_URL || window.location.origin;
+        window.location.href = `${baseUrl}/main/search`;
       }
       return;
     }
@@ -145,10 +146,12 @@ const useAuthStore = create((set, get) => ({
     // Real Google OAuth via Appwrite - this redirects the browser
     // Using try-catch to handle any errors
     try {
+      // Use carpal.gr domain for production, fallback to current origin for development
+      const baseUrl = process.env.NEXT_PUBLIC_APP_URL || window.location.origin;
       account.createOAuth2Session(
         OAuthProvider.Google,
-        `${window.location.origin}/main/search`, // Success URL
-        `${window.location.origin}/auth/login`,  // Failure URL
+        `${baseUrl}/main/search`, // Success URL
+        `${baseUrl}/auth/login`,  // Failure URL
       );
     } catch (error) {
       console.error('Google OAuth error:', error);
