@@ -132,6 +132,22 @@ body {
   animation: slideInRight 0.4s ease-out forwards;
 }
 
+/* Rotating text animation */
+@keyframes rotateText {
+  0%, 20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  25%, 95% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Gradient text */
 .gradient-text {
   background: linear-gradient(135deg, #1a1a1a 0%, #525252 100%);

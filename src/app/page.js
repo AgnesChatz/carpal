@@ -8,6 +8,7 @@ import { Footer } from '@/components/Footer';
 import { Button, Input, QuickFilters, RecentSearches } from '@/components/ui';
 import { MapAddressPicker } from '@/components/maps';
 import { saveSearch } from '@/components/ui';
+import { RotatingText, RotatingTextSimple } from '@/components/RotatingText';
 import './app.css';
 
 // Icon components
@@ -127,7 +128,8 @@ export default function Home() {
               
               <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] sm:leading-tight mb-6">
                 Ταξιδέψτε
-                <span className="gradient-text-blue"> έξυπνα.</span>
+                <br />
+                <RotatingText />
                 <br />
                 Μοιραστείτε το κόστος.
               </h1>
@@ -171,7 +173,8 @@ export default function Home() {
             <div className="lg:hidden text-center animate-fade-in-up">
               <h1 className="text-3xl sm:text-5xl font-bold leading-tight mb-4">
                 Ταξιδέψτε
-                <span className="gradient-text-blue"> έξυπνα.</span>
+                <br />
+                <RotatingTextSimple />
               </h1>
               <p className="text-base text-gray-600 mb-6 max-w-md mx-auto">
                 Συνδεθείτε με οδηγούς και επιβάτες για καθημερινές διαδρομές.
