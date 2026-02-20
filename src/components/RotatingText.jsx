@@ -13,48 +13,55 @@ const words = [
 
 export function RotatingText() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % words.length);
-        setIsAnimating(false);
-      }, 300);
+      setCurrentIndex((prev) => (prev + 1) % words.length);
     }, 2500);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <span className="inline-block relative h-[1.2em] overflow-hidden align-bottom">
+    <span className="inline-flex items-center h-[1.2em] overflow-hidden align-bottom ml-2">
       <span
-        className={`inline-block gradient-text-blue transition-all duration-300 ${
-          isAnimating ? 'opacity-0 translate-y-[-20px]' : 'opacity-100 translate-y-0'
-        }`}
+        className="inline-block gradient-text-blue transition-transform duration-500 ease-in-out"
+        style={{ transform: `translateY(-${currentIndex * 1.2}em)` }}
       >
-        {words[currentIndex]}.
+        {words.map((word, index) => (
+          <span key={index} className="block h-[1.2em] leading-[1.2em]">
+            {word}
+          </span>
+        ))}
       </span>
     </span>
   );
 }
 
-// Simpler version for mobile
+// Mobile version - same inline style
 export function RotatingTextSimple() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % words.length);
-    }, 2000);
+    }, 2500);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <span className="gradient-text-blue animate-pulse">
-      {words[currentIndex]}.
+    <span className="inline-flex items-center h-[1.2em] overflow-hidden align-bottom ml-1">
+      <span
+        className="inline-block gradient-text-blue transition-transform duration-500 ease-in-out"
+        style={{ transform: `translateY(-${currentIndex * 1.2}em)` }}
+      >
+        {words.map((word, index) => (
+          <span key={index} className="block h-[1.2em] leading-[1.2em]">
+            {word}
+          </span>
+        ))}
+      </span>
     </span>
   );
 }

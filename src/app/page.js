@@ -127,11 +127,7 @@ export default function Home() {
               </div>
               
               <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] sm:leading-tight mb-6">
-                Ταξιδέψτε
-                <br />
-                <RotatingText />
-                <br />
-                Μοιραστείτε το κόστος.
+                Ταξιδέψτε <RotatingText />
               </h1>
               
               <p className="text-base sm:text-xl text-gray-600 mb-8 max-w-lg leading-relaxed">
@@ -172,9 +168,7 @@ export default function Home() {
             {/* Mobile-only text content below search */}
             <div className="lg:hidden text-center animate-fade-in-up">
               <h1 className="text-3xl sm:text-5xl font-bold leading-tight mb-4">
-                Ταξιδέψτε
-                <br />
-                <RotatingTextSimple />
+                Ταξιδέψτε <RotatingTextSimple />
               </h1>
               <p className="text-base text-gray-600 mb-6 max-w-md mx-auto">
                 Συνδεθείτε με οδηγούς και επιβάτες για καθημερινές διαδρομές.
