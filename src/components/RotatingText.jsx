@@ -23,18 +23,23 @@ export function RotatingText() {
   }, []);
 
   return (
-    <span className="inline-block overflow-hidden h-[1.1em] align-bottom relative">
-      {words.map((word, index) => (
-        <span
-          key={index}
-          className="block gradient-text-blue transition-all duration-500 ease-in-out"
-          style={{
-            transform: `translateY(-${currentIndex * 100}%)`,
-          }}
-        >
-          {word}
-        </span>
-      ))}
+    <span className="inline-block overflow-hidden align-middle" style={{ height: '1.4em', lineHeight: '1.4em' }}>
+      <span
+        className="inline-block transition-transform duration-500 ease-in-out"
+        style={{
+          transform: `translateY(-${currentIndex * 1.4}em)`,
+        }}
+      >
+        {words.map((word, index) => (
+          <span
+            key={index}
+            className="block gradient-text-blue"
+            style={{ height: '1.4em', lineHeight: '1.4em' }}
+          >
+            {word}
+          </span>
+        ))}
+      </span>
     </span>
   );
 }
@@ -52,18 +57,23 @@ export function RotatingTextSimple() {
   }, []);
 
   return (
-    <span className="inline-block overflow-hidden h-[1.1em] align-bottom relative">
-      {words.map((word, index) => (
-        <span
-          key={index}
-          className="block gradient-text-blue transition-all duration-500 ease-in-out"
-          style={{
-            transform: `translateY(-${currentIndex * 100}%)`,
-          }}
-        >
-          {word}
-        </span>
-      ))}
+    <span className="inline-block overflow-hidden align-middle" style={{ height: '1.4em', lineHeight: '1.4em' }}>
+      <span
+        className="inline-block transition-transform duration-500 ease-in-out"
+        style={{
+          transform: `translateY(-${currentIndex * 1.4}em)`,
+        }}
+      >
+        {words.map((word, index) => (
+          <span
+            key={index}
+            className="block gradient-text-blue"
+            style={{ height: '1.4em', lineHeight: '1.4em' }}
+          >
+            {word}
+          </span>
+        ))}
+      </span>
     </span>
   );
 }
