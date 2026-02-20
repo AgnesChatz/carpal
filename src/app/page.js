@@ -306,12 +306,12 @@ export default function Home() {
                 </form>
 
                 {/* Trust badges */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 mt-6 pt-6 border-t border-gray-100">
-                  <div className="flex items-center gap-1.5 text-xs text-gray-500">
+                <div className="flex flex-row items-center justify-center gap-4 sm:gap-6 mt-6 pt-6 border-t border-gray-100">
+                  <div className="flex items-center gap-1.5 text-xs text-gray-500 whitespace-nowrap">
                     <CheckIcon />
                     Ασφαλείς πληρωμές
                   </div>
-                  <div className="flex items-center gap-1.5 text-xs text-gray-500">
+                  <div className="flex items-center gap-1.5 text-xs text-gray-500 whitespace-nowrap">
                     <CheckIcon />
                     Επαληθευμένοι οδηγοί
                   </div>
