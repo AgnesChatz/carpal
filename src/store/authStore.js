@@ -135,6 +135,10 @@ const useAuthStore = create((set, get) => ({
         userPrivate: MOCK_USER_PRIVATE,
         isAuthenticated: true
       });
+      // Redirect manually in mock mode
+      if (typeof window !== 'undefined') {
+        window.location.href = '/main/search';
+      }
       return;
     }
 
