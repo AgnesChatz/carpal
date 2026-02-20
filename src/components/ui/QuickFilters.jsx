@@ -36,17 +36,17 @@ export function QuickFilters() {
   };
 
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap justify-center gap-2">
       {filters.map((filter) => {
         const Icon = filter.icon;
         return (
           <button
             key={filter.label}
             onClick={() => handleFilter(filter.date)}
-            className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:border-gray-400 hover:bg-gray-50 transition-all"
+            className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 bg-white border border-gray-200 rounded-full text-xs sm:text-sm font-medium text-gray-700 hover:border-gray-400 hover:bg-gray-50 transition-all whitespace-nowrap"
           >
-            <Icon className="w-4 h-4" />
-            {filter.label}
+            <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
+            <span className="truncate">{filter.label}</span>
           </button>
         );
       })}
