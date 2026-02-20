@@ -1,5 +1,7 @@
 import { create } from 'zustand';
 import { mockDrivers, mockDelay } from '@/lib/mockData';
+import { account } from '@/lib/appwrite';
+import { OAuthProvider } from 'appwrite';
 
 const MOCK_USER = {
   $id: 'user-123',
@@ -29,6 +31,9 @@ const MOCK_USER_PRIVATE = {
   banned: false
 };
 
+// Check if we're in mock data mode
+const USE_MOCK_DATA = process.env.NEXT_PUBLIC_USE_MOCK_DATA === 'true';
+
 const useAuthStore = create((set, get) => ({
   user: null,
   userPublic: null,
@@ -37,18 +42,40 @@ const useAuthStore = create((set, get) => ({
   isAuthenticated: false,
 
   init: async () => {
-    // Check localStorage for mock session
-    const savedSession = typeof window !== 'undefined' ? localStorage.getItem('carpal_mock_session') : null;
-    
-    if (savedSession) {
+    if (USE_MOCK_DATA) {
+      // Check localStorage for mock session
+      const savedSession = typeof window !== 'undefined' ? localStorage.getItem('carpal_mock_session') : null;
+      
+      if (savedSession) {
+        set({
+          user: MOCK_USER,
+          userPublic: MOCK_USER_PUBLIC,
+          userPrivate: MOCK_USER_PRIVATE,
+          isAuthenticated: true,
+          isLoading: false
+        });
+      } else {
+        set({
+          user: null,
+          userPublic: null,
+          userPrivate: null,
+          isAuthenticated: false,
+          isLoading: false
+        });
+      }
+      return;
+    }
+
+    // Real Appwrite session check
+    try {
+      const session = await account.get();
       set({
-        user: MOCK_USER,
-        userPublic: MOCK_USER_PUBLIC,
-        userPrivate: MOCK_USER_PRIVATE,
+        user: session,
         isAuthenticated: true,
         isLoading: false
       });
-    } else {
+      // Fetch user public/private data here
+    } catch (error) {
       set({
         user: null,
         userPublic: null,
@@ -68,53 +95,126 @@ const useAuthStore = create((set, get) => ({
   },
 
   login: async (email, password) => {
-    await mockDelay(800);
-    
-    // Accept any email/password for demo
-    if (email && password) {
+    if (USE_MOCK_DATA) {
+      await mockDelay(800);
+      
+      // Accept any email/password for demo
+      if (email && password) {
+        localStorage.setItem('carpal_mock_session', 'true');
+        set({
+          user: MOCK_USER,
+          userPublic: MOCK_USER_PUBLIC,
+          userPrivate: MOCK_USER_PRIVATE,
+          isAuthenticated: true
+        });
+        return { success: true };
+      }
+      return { success: false, error: 'Invalid credentials' };
+    }
+
+    // Real Appwrite login
+    try {
+      await account.createEmailPasswordSession(email, password);
+      const session = await account.get();
+      set({
+        user: session,
+        isAuthenticated: true
+      });
+      return { success: true };
+    } catch (error) {
+      return { success: false, error: error.message };
+    }
+  },
+
+  loginWithGoogle: async () => {
+    if (USE_MOCK_DATA) {
+      await mockDelay(800);
       localStorage.setItem('carpal_mock_session', 'true');
       set({
-        user: MOCK_USER,
-        userPublic: MOCK_USER_PUBLIC,
+        user: { ...MOCK_USER, name: 'Google User', email: 'user@gmail.com' },
+        userPublic: { ...MOCK_USER_PUBLIC, displayName: 'Google User' },
         userPrivate: MOCK_USER_PRIVATE,
         isAuthenticated: true
       });
       return { success: true };
     }
-    return { success: false, error: 'Invalid credentials' };
+
+    // Real Google OAuth via Appwrite
+    try {
+      account.createOAuth2Session(
+        OAuthProvider.Google,
+        `${window.location.origin}/main/search`, // Success URL
+        `${window.location.origin}/auth/login`,  // Failure URL
+      );
+      return { success: true };
+    } catch (error) {
+      return { success: false, error: error.message };
+    }
   },
 
   register: async (email, password, name, phone) => {
-    await mockDelay(1000);
-    
-    if (email && password && name && phone) {
-      localStorage.setItem('carpal_mock_session', 'true');
-      const newUser = {
-        ...MOCK_USER,
-        name,
-        email
-      };
+    if (USE_MOCK_DATA) {
+      await mockDelay(1000);
+      
+      if (email && password && name && phone) {
+        localStorage.setItem('carpal_mock_session', 'true');
+        const newUser = {
+          ...MOCK_USER,
+          name,
+          email
+        };
+        set({
+          user: newUser,
+          userPublic: { ...MOCK_USER_PUBLIC, displayName: name },
+          userPrivate: { ...MOCK_USER_PRIVATE, phone },
+          isAuthenticated: true
+        });
+        return { success: true };
+      }
+      return { success: false, error: 'Please fill all fields' };
+    }
+
+    // Real Appwrite registration
+    try {
+      await account.create('unique()', email, password, name);
+      await account.createEmailPasswordSession(email, password);
+      const session = await account.get();
       set({
-        user: newUser,
-        userPublic: { ...MOCK_USER_PUBLIC, displayName: name },
-        userPrivate: { ...MOCK_USER_PRIVATE, phone },
+        user: session,
         isAuthenticated: true
       });
       return { success: true };
+    } catch (error) {
+      return { success: false, error: error.message };
     }
-    return { success: false, error: 'Please fill all fields' };
   },
 
   logout: async () => {
-    await mockDelay(300);
-    localStorage.removeItem('carpal_mock_session');
-    set({
-      user: null,
-      userPublic: null,
-      userPrivate: null,
-      isAuthenticated: false
-    });
-    return { success: true };
+    if (USE_MOCK_DATA) {
+      await mockDelay(300);
+      localStorage.removeItem('carpal_mock_session');
+      set({
+        user: null,
+        userPublic: null,
+        userPrivate: null,
+        isAuthenticated: false
+      });
+      return { success: true };
+    }
+
+    // Real Appwrite logout
+    try {
+      await account.deleteSession('current');
+      set({
+        user: null,
+        userPublic: null,
+        userPrivate: null,
+        isAuthenticated: false
+      });
+      return { success: true };
+    } catch (error) {
+      return { success: false, error: error.message };
+    }
   },
 
   updateProfile: async (data) => {
