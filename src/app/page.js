@@ -175,12 +175,12 @@ export default function Home() {
               </p>
               <div className="flex flex-row justify-center gap-3">
                 <Link href="/main/search">
-                  <Button size="lg" className="bg-gray-900 text-white hover:bg-gray-800 px-6 py-3 text-base rounded-xl">
+                  <Button size="lg" className="bg-gray-900 text-white hover:bg-gray-800 px-6 py-3 text-base rounded-xl whitespace-nowrap">
                     Βρείτε διαδρομή
                   </Button>
                 </Link>
                 <Link href="/auth/register">
-                  <Button variant="outline" size="lg" className="px-6 py-3 text-base rounded-xl border-2">
+                  <Button variant="outline" size="lg" className="px-6 py-3 text-base rounded-xl border-2 whitespace-nowrap">
                     Γίνετε οδηγός
                   </Button>
                 </Link>
