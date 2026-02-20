@@ -39,16 +39,18 @@ export function BottomNav() {
   const pathname = usePathname();
   const { isAuthenticated } = useAuthStore();
 
-  // Don't show bottom nav on auth pages or landing page
-  if (pathname === '/' || pathname.startsWith('/auth/')) {
+  // Don't show bottom nav on auth pages
+  if (pathname.startsWith('/auth/')) {
     return null;
   }
 
+  const isHome = pathname === '/';
+  
   const navItems = [
+    { href: '/', label: 'Αρχική', icon: HomeIcon },
     { href: '/main/search', label: 'Αναζήτηση', icon: SearchIcon },
-    { href: '/main/bookings', label: 'Κρατήσεις', icon: BookingsIcon },
     { href: '/main/listings/new', label: 'Δημοσίευση', icon: AddIcon, highlight: true },
-    { href: '/main/messages', label: 'Μηνύματα', icon: BookingsIcon },
+    { href: '/main/bookings', label: 'Κρατήσεις', icon: BookingsIcon },
     { href: '/main/profile', label: 'Προφίλ', icon: ProfileIcon },
   ];
 
