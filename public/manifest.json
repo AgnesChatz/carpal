@@ -1,0 +1,16 @@
+{
+  "name": "carpal.gr - Μοιραστείτε τη διαδρομή σας",
+  "short_name": "carpal.gr",
+  "description": "Carpooling platform για την Ελλάδα",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/appwrite.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}

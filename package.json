@@ -1,5 +1,5 @@
 {
-  "name": "starter-for-nextjs",
+  "name": "carpal",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,15 +10,27 @@
   },
   "dependencies": {
     "@appwrite.io/pink-icons": "^1.0.0",
+    "@stripe/react-stripe-js": "^3.1.1",
+    "@stripe/stripe-js": "^5.5.0",
     "@tailwindcss/postcss": "^4.1.11",
     "appwrite": "^18.1.1",
+    "date-fns": "^4.1.0",
+    "framer-motion": "^12.34.2",
+    "leaflet": "^1.9.4",
+    "lucide-react": "^0.575.0",
     "next": "^15.4.8",
+    "next-themes": "^0.4.6",
     "postcss": "^8.5.6",
     "react": "^19.1.2",
     "react-dom": "^19.1.2",
-    "tailwindcss": "^4.1.11"
+    "react-leaflet": "^5.0.0",
+    "recharts": "^3.7.0",
+    "stripe": "^17.5.0",
+    "tailwindcss": "^4.1.11",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
+    "node-appwrite": "^22.1.0",
     "prettier": "3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14"
   }
