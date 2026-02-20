@@ -17,7 +17,7 @@ import {
 } from './mockData';
 
 // Toggle this to switch between mock and real database
-const USE_MOCK_DATA = true;
+const USE_MOCK_DATA = process.env.NEXT_PUBLIC_USE_MOCK_DATA === 'true' || false;
 
 // ==================== USERS ====================
 

@@ -153,7 +153,7 @@ export default function RootLayout({ children }) {
         />
         <ExtensionGuard />
       </head>
-      <body className={`${inter.className} antialiased`} suppressHydrationWarning>
+      <body className={`${inter.className} antialiased overflow-x-hidden`} suppressHydrationWarning>
         <Providers>
           <OfflineIndicator />
           {children}

@@ -109,7 +109,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center pt-20">
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-60" />
+          <div className="absolute -top-40 -right-40 w-72 md:w-96 h-72 md:h-96 bg-blue-100 rounded-full blur-3xl opacity-60" />
           <div className="absolute top-1/2 -left-20 w-72 h-72 bg-green-100 rounded-full blur-3xl opacity-50" />
           <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-purple-100 rounded-full blur-3xl opacity-40" />
         </div>
@@ -125,11 +125,21 @@ export default function Home() {
                 </span>
               </div>
               
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+              <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] sm:leading-tight mb-6">
                 Ταξιδέψτε
                 <span className="gradient-text-blue"> έξυπνα.</span>
                 <br />
                 Μοιραστείτε το κόστος.
+                <span className="inline-flex items-center ml-2 sm:ml-4">
+                  <svg className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 text-blue-600 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ animationDuration: '2s' }}>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                  </svg>
+                  <span className="flex -space-x-1 ml-1">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: '0s' }} />
+                    <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
+                    <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }} />
+                  </span>
+                </span>
               </h1>
               
               <p className="text-xl text-gray-600 mb-8 max-w-lg leading-relaxed">
@@ -635,8 +645,8 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-20" />
+          <div className="absolute top-0 left-1/4 w-72 md:w-96 h-72 md:h-96 bg-blue-500 rounded-full blur-3xl opacity-20" />
+          <div className="absolute bottom-0 right-1/4 w-72 md:w-96 h-72 md:h-96 bg-purple-500 rounded-full blur-3xl opacity-20" />
         </div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
