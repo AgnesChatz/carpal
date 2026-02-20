@@ -114,24 +114,100 @@ export default function Home() {
           <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-purple-100 rounded-full blur-3xl opacity-40" />
         </div>
         
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            
-            {/* Mobile: Search Card FIRST */}
-            <div className="lg:order-2 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              <div className="bg-white rounded-2xl lg:rounded-3xl shadow-xl lg:shadow-2xl border border-gray-100 p-5 lg:p-8">
-                <div className="flex items-center gap-3 mb-4 lg:mb-6">
-                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl lg:rounded-2xl flex items-center justify-center shadow-lg shadow-blue-200">
-                    <svg className="w-5 h-5 lg:w-6 lg:h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h2 className="text-lg lg:text-2xl font-bold text-gray-900">Βρείτε διαδρομή</h2>
-                    <p className="text-xs lg:text-sm text-gray-500 hidden sm:block">Συμπληρώστε τα στοιχεία σας</p>
-                  </div>
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left content - Hidden on mobile, shown on lg */}
+            <div className="hidden lg:block animate-fade-in-up">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-gray-200 shadow-sm mb-6">
+                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                <span className="text-sm text-gray-600 flex items-center gap-1.5">
+                  <FireIcon /> Δημοφιλές στη Θεσσαλονίκη
+                </span>
+              </div>
+              
+              <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] sm:leading-tight mb-6">
+                Ταξιδέψτε
+                <span className="gradient-text-blue"> έξυπνα.</span>
+                <br />
+                Μοιραστείτε το κόστος.
+              </h1>
+              
+              <p className="text-base sm:text-xl text-gray-600 mb-8 max-w-lg leading-relaxed">
+                Συνδεθείτε με οδηγούς και επιβάτες για καθημερινές διαδρομές. 
+                Μειώστε τα έξοδα και το περιβαλλοντικό σας αποτύπωμα.
+              </p>
+
+              <div className="flex flex-row gap-3 sm:gap-4">
+                <Link href="/main/search" className="flex-1 sm:flex-none">
+                  <Button size="lg" className="w-full sm:w-auto btn-shine bg-gray-900 text-white hover:bg-gray-800 px-4 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl whitespace-nowrap">
+                    Βρείτε διαδρομή
+                  </Button>
+                </Link>
+                <Link href="/auth/register" className="flex-1 sm:flex-none">
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto px-4 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl border-2 whitespace-nowrap">
+                    Γίνετε οδηγός
+                  </Button>
+                </Link>
+              </div>
+
+              {/* Quick Stats */}
+              <div className="flex gap-4 sm:gap-8 mt-12 pt-8 border-t border-gray-200 overflow-x-auto">
+                <div className="flex-shrink-0">
+                  <p className="text-2xl sm:text-3xl font-bold text-gray-900">€2.5</p>
+                  <p className="text-xs sm:text-sm text-gray-500">μέση τιμή/διαδρομή</p>
                 </div>
-              <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 p-8">
+                <div className="flex-shrink-0">
+                  <p className="text-2xl sm:text-3xl font-bold text-gray-900">40%</p>
+                  <p className="text-xs sm:text-sm text-gray-500">λιγότερα έξοδα</p>
+                </div>
+                <div className="flex-shrink-0">
+                  <p className="text-2xl sm:text-3xl font-bold text-gray-900">0kg</p>
+                  <p className="text-xs sm:text-sm text-gray-500">επιπλέον CO₂</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile-only text content below search */}
+            <div className="lg:hidden text-center animate-fade-in-up">
+              <h1 className="text-3xl sm:text-5xl font-bold leading-tight mb-4">
+                Ταξιδέψτε
+                <span className="gradient-text-blue"> έξυπνα.</span>
+              </h1>
+              <p className="text-base text-gray-600 mb-6 max-w-md mx-auto">
+                Συνδεθείτε με οδηγούς και επιβάτες για καθημερινές διαδρομές.
+              </p>
+              <div className="flex flex-row justify-center gap-3">
+                <Link href="/main/search">
+                  <Button size="lg" className="bg-gray-900 text-white hover:bg-gray-800 px-6 py-3 text-base rounded-xl">
+                    Βρείτε διαδρομή
+                  </Button>
+                </Link>
+                <Link href="/auth/register">
+                  <Button variant="outline" size="lg" className="px-6 py-3 text-base rounded-xl border-2">
+                    Γίνετε οδηγός
+                  </Button>
+                </Link>
+              </div>
+              {/* Quick Stats Mobile */}
+              <div className="flex justify-center gap-6 mt-8 pt-6 border-t border-gray-200">
+                <div>
+                  <p className="text-2xl font-bold text-gray-900">€2.5</p>
+                  <p className="text-xs text-gray-500">μέση τιμή</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-bold text-gray-900">40%</p>
+                  <p className="text-xs text-gray-500">εξοικονόμηση</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-bold text-gray-900">0kg</p>
+                  <p className="text-xs text-gray-500">CO₂</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right - Search Card with ALL Filters - First on mobile */}
+            <div className="order-first lg:order-last animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 p-4 sm:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-200">
                     <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -213,7 +289,7 @@ export default function Home() {
                 </form>
 
                 {/* Trust badges */}
-                <div className="flex items-center justify-center gap-6 mt-6 pt-6 border-t border-gray-100">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 mt-6 pt-6 border-t border-gray-100">
                   <div className="flex items-center gap-1.5 text-xs text-gray-500">
                     <CheckIcon />
                     Ασφαλείς πληρωμές
@@ -255,65 +331,11 @@ export default function Home() {
                 ))}
               </div>
             </div>
-
-            {/* Desktop: Text content SECOND / Mobile: Text content SECOND */}
-            <div className="lg:order-1 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <div className="text-center lg:text-left">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white rounded-full border border-gray-200 shadow-sm mb-4 lg:mb-6">
-                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                  <span className="text-xs lg:text-sm text-gray-600 flex items-center gap-1.5">
-                    <FireIcon /> Δημοφιλές στη Θεσσαλονίκη
-                  </span>
-                </div>
-                
-                <h1 className="text-2xl sm:text-4xl lg:text-6xl font-bold leading-tight mb-4 lg:mb-6">
-                  Ταξιδέψτε
-                  <span className="gradient-text-blue"> έξυπνα.</span>
-                  <br />
-                  Μοιραστείτε το κόστος.
-                </h1>
-                
-                <p className="text-sm sm:text-base lg:text-lg text-gray-600 mb-6 lg:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                  Συνδεθείτε με οδηγούς και επιβάτες για καθημερινές διαδρομές. 
-                  Μειώστε τα έξοδα και το περιβαλλοντικό σας αποτύπωμα.
-                </p>
-
-                {/* Mobile: Compact buttons */}
-                <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                  <Link href="/main/search" className="w-full sm:w-auto">
-                    <Button size="lg" className="w-full sm:w-auto btn-shine bg-gray-900 text-white hover:bg-gray-800 px-6 py-3 text-sm sm:text-base rounded-xl">
-                      Βρείτε διαδρομή
-                    </Button>
-                  </Link>
-                  <Link href="/auth/register" className="w-full sm:w-auto">
-                    <Button variant="outline" size="lg" className="w-full sm:w-auto px-6 py-3 text-sm sm:text-base rounded-xl border-2">
-                      Γίνετε οδηγός
-                    </Button>
-                  </Link>
-                </div>
-
-                {/* Quick Stats - Hidden on mobile, show on lg */}
-                <div className="hidden lg:flex gap-8 mt-8 pt-8 border-t border-gray-200">
-                  <div>
-                    <p className="text-2xl font-bold text-gray-900">€2.5</p>
-                    <p className="text-sm text-gray-500">μέση τιμή/διαδρομή</p>
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-gray-900">40%</p>
-                    <p className="text-sm text-gray-500">λιγότερα έξοδα</p>
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-gray-900">0kg</p>
-                    <p className="text-sm text-gray-500">επιπλέον CO₂</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Sustainability Section -->
+      {/* Sustainability Section */}
       <section className="py-24 bg-white relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
