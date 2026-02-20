@@ -30,7 +30,7 @@ const GoogleIcon = () => (
 
 export default function RegisterPage() {
   const router = useRouter();
-  const { register } = useAuthStore();
+  const { register, loginWithGoogle } = useAuthStore();
   const [formData, setFormData] = useState({
     name: '',
     email: '',

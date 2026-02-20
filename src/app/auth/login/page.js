@@ -36,7 +36,7 @@ const DEMO_CREDENTIALS = {
 
 export default function LoginPage() {
   const router = useRouter();
-  const { login } = useAuthStore();
+  const { login, loginWithGoogle } = useAuthStore();
   const [formData, setFormData] = useState({
     email: DEMO_CREDENTIALS.email,
     password: DEMO_CREDENTIALS.password
