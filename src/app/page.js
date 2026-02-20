@@ -130,16 +130,6 @@ export default function Home() {
                 <span className="gradient-text-blue"> έξυπνα.</span>
                 <br />
                 Μοιραστείτε το κόστος.
-                <span className="inline-flex items-center ml-2 sm:ml-4">
-                  <svg className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 text-blue-600 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ animationDuration: '2s' }}>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                  </svg>
-                  <span className="flex -space-x-1 ml-1">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: '0s' }} />
-                    <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
-                    <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }} />
-                  </span>
-                </span>
               </h1>
               
               <p className="text-xl text-gray-600 mb-8 max-w-lg leading-relaxed">
@@ -147,14 +137,14 @@ export default function Home() {
                 Μειώστε τα έξοδα και το περιβαλλοντικό σας αποτύπωμα.
               </p>
 
-              <div className="flex flex-wrap gap-4">
-                <Link href="/main/search">
-                  <Button size="lg" className="btn-shine bg-gray-900 text-white hover:bg-gray-800 px-8 py-4 text-lg rounded-xl">
+              <div className="flex flex-row gap-3 sm:gap-4">
+                <Link href="/main/search" className="flex-1 sm:flex-none">
+                  <Button size="lg" className="w-full sm:w-auto btn-shine bg-gray-900 text-white hover:bg-gray-800 px-4 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl whitespace-nowrap">
                     Βρείτε διαδρομή
                   </Button>
                 </Link>
-                <Link href="/auth/register">
-                  <Button variant="outline" size="lg" className="px-8 py-4 text-lg rounded-xl border-2">
+                <Link href="/auth/register" className="flex-1 sm:flex-none">
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto px-4 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl border-2 whitespace-nowrap">
                     Γίνετε οδηγός
                   </Button>
                 </Link>
