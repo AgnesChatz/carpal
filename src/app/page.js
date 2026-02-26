@@ -701,12 +701,12 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 px-4 sm:px-0">
             <Link href="/auth/register" className="w-full sm:w-auto">
-              <Button size="lg" className="w-full sm:w-auto bg-white text-gray-900 hover:bg-gray-100 px-6 sm:px-10 py-4 sm:py-5 text-base sm:text-lg rounded-xl font-semibold">
+              <Button size="lg" className="w-full sm:w-auto bg-white !text-gray-900 hover:bg-gray-100 px-6 sm:px-10 py-4 sm:py-5 text-base sm:text-lg rounded-xl font-semibold whitespace-nowrap">
                 Δωρεάν εγγραφή
               </Button>
             </Link>
             <Link href="/main/search" className="w-full sm:w-auto">
-              <Button variant="outline" size="lg" className="w-full sm:w-auto border-2 border-white/30 text-white hover:bg-white/10 px-6 sm:px-10 py-4 sm:py-5 text-base sm:text-lg rounded-xl">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto border-2 border-white/30 !text-white hover:bg-white/10 px-6 sm:px-10 py-4 sm:py-5 text-base sm:text-lg rounded-xl whitespace-nowrap">
                 Αναζήτηση διαδρομών
               </Button>
             </Link>
