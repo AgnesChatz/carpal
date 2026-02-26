@@ -12,18 +12,18 @@ const functions = new Functions(client);
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID || 'carpal_db';
 
 const COLLECTIONS = {
-  USERS_PUBLIC: 'users_public',
-  USERS_PRIVATE: 'users_private',
-  VEHICLES: 'vehicles',
-  LISTINGS: 'listings',
-  LISTING_OCCURRENCES: 'listing_occurrences',
-  BOOKINGS: 'bookings',
-  PAYMENTS: 'payments',
-  MESSAGES: 'messages',
-  RATINGS: 'ratings',
-  REPORTS: 'reports',
-  ADMIN_AUDIT: 'admin_audit',
-  PUSH_SUBSCRIPTIONS: 'push_subscriptions'
+  USERS_PUBLIC: 'Users Public',
+  USERS_PRIVATE: 'Users Private',
+  VEHICLES: 'Vehicles',
+  LISTINGS: 'Listings',
+  LISTING_OCCURRENCES: 'Listing Occurrences',
+  BOOKINGS: 'Bookings',
+  PAYMENTS: 'Payments',
+  MESSAGES: 'Messages',
+  RATINGS: 'Ratings',
+  REPORTS: 'Reports',
+  ADMIN_AUDIT: 'Admin Audit',
+  PUSH_SUBSCRIPTIONS: 'Push Subscriptions'
 };
 
 export { client, account, databases, storage, functions, DATABASE_ID, COLLECTIONS };

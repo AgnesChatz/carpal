@@ -3,6 +3,7 @@
 // When USE_MOCK_DATA = false, uses Appwrite
 
 import { databases, DATABASE_ID, COLLECTIONS } from './appwrite';
+import { Query } from 'appwrite';
 import { 
   mockDrivers, 
   mockListings, 
@@ -28,7 +29,13 @@ export async function getUserPublic(userId) {
   }
   
   try {
-    return await databases.getDocument(DATABASE_ID, COLLECTIONS.USERS_PUBLIC, userId);
+    // Query by userId field since driverId references userId, not document $id
+    const result = await databases.listDocuments(
+      DATABASE_ID, 
+      COLLECTIONS.USERS_PUBLIC, 
+      [Query.equal('userId', userId)]
+    );
+    return result.documents[0] || null;
   } catch (error) {
     console.error('Error fetching user:', error);
     return null;
