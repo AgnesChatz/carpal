@@ -711,8 +711,10 @@ export default function Home() {
               </Button>
             </Link>
           </div>
-          <p className="text-xs sm:text-sm text-gray-400 mt-4 sm:mt-6 flex flex-wrap items-center justify-center gap-1 px-4 sm:px-0">
-            <CheckIcon /> Δωρεάν εγγραφή <CheckIcon /> Καμία συνδρομή <CheckIcon /> Πληρώνετε μόνο όταν ταξιδεύετε
+          <p className="text-xs sm:text-sm text-gray-300 mt-4 sm:mt-6 flex flex-wrap items-center justify-center gap-2 px-4 sm:px-0">
+            <span className="flex items-center gap-1"><span className="text-green-400">✓</span> Δωρεάν εγγραφή</span>
+            <span className="flex items-center gap-1"><span className="text-green-400">✓</span> Καμία συνδρομή</span>
+            <span className="flex items-center gap-1"><span className="text-green-400">✓</span> Πληρώνετε μόνο όταν ταξιδεύετε</span>
           </p>
         </div>
       </section>
